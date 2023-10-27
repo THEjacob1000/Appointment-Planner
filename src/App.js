@@ -16,11 +16,6 @@ function App() {
     setAppointments(prevAppointments => [...prevAppointments, { name, contact, date, time }]);
   };
 
-  useEffect(() => {
-    newContact('Bob', '0567 024 125', 'bob@bob.com');
-    newContact('Jeff', '0567 548 125', 'jeff@bob.com');
-  }, []);
-
   const router = createBrowserRouter(createRoutesFromElements(
     <Route path="/" element={ <Root /> }>
       <Route index element={ <Navigate to={ROUTES.CONTACTS} replace /> } />
